@@ -10,22 +10,17 @@ export default function CountrySearchBox() {
     const handleChange = (e) => {
         e.preventDefault();
         setSearchInput(e.target.value);
-      };
+    };
 
     return (
-        <div className="h-screen flex-col items-center justify-center text-black grid-cols-1 gap-10">
-            <div className="relative">
-                <input className="w-[600px] px-5 py-3 rounded-full 
-                border-2 border-gray-500 focus:border-gray-700 
-                outline-none transition"
-                value={searchInput}
-                onChange={handleChange}
-                placeholder="Input a country..."/>
-            </div>
+        <div className="h-screen flex-1 items-center rounded-3xl justify-cent text-black">
+            <input className="w-[600px] px-5 py-3 rounded-t-3xl mb-0 outline-none transition"
+            value={searchInput}
+            onChange={handleChange}
+            placeholder="Input a country..."/>
             {searchInput !== "" &&
-            <div className="absolute mt-1 w-[600px] p-2 bg-white shadow-lg
-                rounded-bl rounded-br max-h-56 overflow-y-auto">
-                <ul>
+                <ul className="relative w-[600px] bg-white
+                rounded-b-3xl max-h-56 px-5 py-3 overflow-y-auto mt-0">
                     {
                         countries
                         .filter((country) => {
@@ -36,8 +31,7 @@ export default function CountrySearchBox() {
                         })
                     }
                 </ul>
-            </div>
-            } 
+            }
         </div>
     );
 }
