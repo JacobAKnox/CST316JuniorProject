@@ -26,21 +26,21 @@ export default function CountrySearchBox() {
     };
 
     const submitGuess = (e) => {
-        if (!validCountry) return;
         make_guess(country)
     }
  
     return (
         <div className="h-screen flex-1 items-center justify-cent text-black">
-            <div className="w-[600px] px-5 py-3 flex bg-white rounded-3xl m-2 outline-none transition">
+            <div className="w-[600px] px-5 py-1 flex bg-white rounded-3xl m-2 outline-none transition">
                 <input className="grow focus:outline-none"
                 value={searchInput}
                 onChange={handleChange}
                 placeholder="Input a country..."/>
                 <button
                 onClick={submitGuess}
-                className="hover:bg-slate-200 p-0">
-                    Go
+                disabled={!validCountry}
+                className="hover:bg-indigo-800 bg-indigo-700 text-white p-2 m-0 rounded-3xl disabled:bg-slate-200 disabled:text-slate-400">
+                    Submit
                 </button>
             </div>
             {searchInput !== "" && !tempHide &&
