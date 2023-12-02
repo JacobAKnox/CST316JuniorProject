@@ -45,7 +45,7 @@ export default function CountrySearchBox() {
             </div>
             {searchInput !== "" && !tempHide &&
                 <ul className="relative w-[600px] bg-white
-                rounded-3xl max-h-56 px-5 py-3 m-2 overflow-y-auto">
+                rounded-3xl max-h-56 px-5 py-1 m-2 overflow-y-auto">
                     {
                         countries
                         .filter((country) => {
