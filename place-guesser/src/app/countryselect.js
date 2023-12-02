@@ -31,8 +31,8 @@ export default function CountrySearchBox() {
     }
  
     return (
-        <div className="h-screen flex-1 items-center rounded-3xl justify-cent text-black">
-            <div className="w-[600px] px-5 py-3 flex bg-white rounded-t-3xl mb-0 outline-none transition">
+        <div className="h-screen flex-1 items-center justify-cent text-black">
+            <div className="w-[600px] px-5 py-3 flex bg-white rounded-3xl m-2 outline-none transition">
                 <input className="grow focus:outline-none"
                 value={searchInput}
                 onChange={handleChange}
@@ -45,7 +45,7 @@ export default function CountrySearchBox() {
             </div>
             {searchInput !== "" && !tempHide &&
                 <ul className="relative w-[600px] bg-white
-                rounded-b-3xl max-h-56 px-5 py-3 overflow-y-auto mt-0">
+                rounded-3xl max-h-56 px-5 py-3 m-2 overflow-y-auto">
                     {
                         countries
                         .filter((country) => {
