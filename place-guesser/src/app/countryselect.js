@@ -1,6 +1,6 @@
 'use client'
 
-import { countries } from '@/data/countries';
+import { countries } from '@/lib/countries';
 import React, {useState} from 'react'
 import CountryItem from './countryitem';
 import { make_guess } from '@/game/game';

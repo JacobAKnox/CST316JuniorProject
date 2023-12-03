@@ -1,6 +1,6 @@
 // use this for game logic and state
 
-import { mock_infopanel_data } from "@/data/mock_infopanel_data";
+import { mock_infopanel_data } from "@/lib/mock_infopanel_data";
 
 let goal = {name: "Canada", id: 1}
 let guess_count = 0

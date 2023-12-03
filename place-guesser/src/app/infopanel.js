@@ -1,6 +1,6 @@
 'use client'
 
-import { mock_infopanel_data } from '@/data/mock_infopanel_data'
+import { mock_infopanel_data } from '@/lib/mock_infopanel_data'
 
 export default function InfoPanel() {
   function directionToEmoji(dir) {
