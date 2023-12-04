@@ -1,9 +1,12 @@
 // pull in country data here
 
-export const countries = [
-    {name: "Canada", id: 1},
-    {name: "UK", id: 2},
-    {name: "France", id: 3},
-    {name: "China", id: 4},
-    {name: "Japan", id: 5}
-]
+import clientPromise from "./database";
+
+export const get_countries = async () => {
+    if (!retrived_countries) {
+        await load_countries();
+    }
+}
+
+let retrived_countries = false;
+let countries = [];

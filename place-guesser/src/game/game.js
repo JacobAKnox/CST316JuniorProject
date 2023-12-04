@@ -1,8 +1,6 @@
 // use this for game logic and state
 
-import { mock_infopanel_data } from "@/lib/mock_infopanel_data";
-
-let goal = {name: "Canada", id: 1}
+let goal = {name: "Andorra", id: 1}
 let guess_count = 0
 const max_guesses = 5;
 

@@ -1,15 +1,25 @@
 'use client'
 
-import { countries } from '@/lib/countries';
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import CountryItem from './countryitem';
 import { make_guess } from '@/game/game';
+
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}
 
 export default function CountrySearchBox() {
     const [searchInput, setSearchInput] = useState("");
     const [country, setCountry] = useState({});
     const [tempHide, setTempHide] = useState(false);
     const [validCountry, setValidCountry] = useState(false);
+    const [countries, setCountries] = useState([]);
+
+    useEffect(() => {
+        fetch("/countries")
+        .then(response => response.json())
+        .then(data => setCountries(data))
+    }, [])
 
     const handleChange = (e) => {
         e.preventDefault()
@@ -49,7 +59,7 @@ export default function CountrySearchBox() {
                     {
                         countries
                         .filter((country) => {
-                            return country.name.toLocaleLowerCase().match(searchInput.toLowerCase())
+                            return country.name.toLocaleLowerCase().match(escapeRegExp(searchInput.toLowerCase()))
                         })
                         .map((country) => {
                             return <CountryItem key={country.id} country={country} onSelect={selectGuess}/>
