@@ -61,6 +61,7 @@ export default function CountrySearchBox() {
                         .filter((country) => {
                             return country.name.toLocaleLowerCase().match(escapeRegExp(searchInput.toLowerCase()))
                         })
+                        .slice(0, 6)
                         .map((country) => {
                             return <CountryItem key={country.id} country={country} onSelect={selectGuess}/>
                         })
