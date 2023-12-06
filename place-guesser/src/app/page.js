@@ -1,4 +1,4 @@
-import CountrySearchBox from './countryselect'
+import CountrySearchBox from '../components/countryselect'
 
 export default function Home() {
   return (

@@ -1,5 +1,3 @@
-import { make_guess } from "@/game/game";
-
 export default function CountryItem({country, onSelect}) {
     const handleClick = (e) => {
         onSelect(country)
