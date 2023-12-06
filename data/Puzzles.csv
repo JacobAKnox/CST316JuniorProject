@@ -1,6 +1,6 @@
 ForiegnPlace,USPlace,State,Country,CountryId
 Kabul,Cabool, Missouri,Afghanistan,3
-VlorÎ,Valona, Georgia,Albania,6
+Vlor√´,Valona, Georgia,Albania,6
 Algiers,Algiers, Louisiana,Algeria,56
 Algiers,Algiers, Indiana,Algeria,56
 Oran,Oran, Missouri,Algeria,56
@@ -32,10 +32,10 @@ Charleroi,Charleroi, Pennsylvania,Belgium,18
 Ghent,Ghent, Minnesota,Belgium,18
 Ghent,Ghent, Kentucky,Belgium,18
 Hoboken,Hoboken, New Jersey,Belgium,18
-LiËge,Liege, Missouri,Belgium,18
+Li√®ge,Liege, Missouri,Belgium,18
 Luxemburg,Luxemburg, Wisconsin,Belgium,18
 Namur,Namur, Wisconsin,Belgium,18
-RosiËres,Rosiere, Wisconsin,Belgium,18
+Rosi√®res,Rosiere, Wisconsin,Belgium,18
 Walhain,Walhain, Wisconsin,Belgium,18
 Waterloo,Waterloo, New York,Belgium,18
 Waterloo,Waterloo, Indiana,Belgium,18
@@ -43,8 +43,8 @@ Waterloo,Waterloo, Illinois,Belgium,18
 Watervliet,Watervliet, New York,Belgium,18
 Bolivia,Bolivia, North Carolina,Bolivia,26
 La Paz,La Paz, Indiana,Bolivia,26
-PotosÌ,Potosi, Missouri,Bolivia,26
-PotosÌ,Potosi, Wisconsin,Bolivia,26
+Potos√≠,Potosi, Missouri,Bolivia,26
+Potos√≠,Potosi, Wisconsin,Bolivia,26
 Brazil,Brazil, Indiana,Brazil,27
 Pleven,Plevna, Montana,Bulgaria,20
 Shumen (formerly: Shumla),Shumla, Texas,Bulgaria,20
@@ -117,7 +117,7 @@ Truro,Truro Township, Ohio,Canada,34
 Uxbridge,Uxbridge, North Dakota,Canada,34
 Watford,Watford City, North Dakota,Canada,34
 Windsor,Windsor, North Dakota,Canada,34
-ValparaÌso,Valparaiso, Indiana,Chile,41
+Valpara√≠so,Valparaiso, Indiana,Chile,41
 Beijing,Pekin, Illinois,China,43
 Beijing,New Pekin, Indiana,China,43
 Guangzhou,Canton, Georgia,China,43
@@ -130,8 +130,8 @@ Nanjing,Nankin Township, Michigan,China,43
 Shanghai,Shanghai, West Virginia,China,43
 Shanghai,Shanghai City, Illinois,China,43
 Wusong,Woosung, Illinois,China,43
-Bogot·,Bogota, Illinois,Colombia,44
-Bogot·,Bogata, Texas,Colombia,44
+Bogot√°,Bogota, Illinois,Colombia,44
+Bogot√°,Bogata, Texas,Colombia,44
 Cuba,Cuba, Missouri,Cuba,46
 ,,,,
 Cuba,Cuba Township, Lake County,Cuba,46
@@ -142,38 +142,38 @@ Miramar,Miramar, Florida,Cuba,46
 Yara,Yara, Minnesota,Cuba,46
 Beroun,Beroun, Minnesota,Czech Republic,50
 Brno,Bruno, Nebraska,Czech Republic,50
-DolnÌ Lou?ky,Loucky, Nebraska,Czech Republic,50
-Domaûlice (German: Taus),Taus, Wisconsin,Czech Republic,50
-Frenöt·t pod Radhoöt?m,Frenstat, Texas,Czech Republic,50
-Fr˝dek-MÌstek,Frydek, Texas,Czech Republic,50
-HornÌ Lou?ky,Loucky, Nebraska,Czech Republic,50
-Host˝n,Hostyn, Texas,Czech Republic,50
-Hradec Kr·lovÈ,New Hradec, North Dakota,Czech Republic,50
-KarlÌn,Karlin, Michigan,Czech Republic,50
-KarlÌn,Karlin, Missouri,Czech Republic,50
+Doln√≠ Lou?ky,Loucky, Nebraska,Czech Republic,50
+Doma≈ælice (German: Taus),Taus, Wisconsin,Czech Republic,50
+Fren≈°t√°t pod Radho≈°t?m,Frenstat, Texas,Czech Republic,50
+Fr√Ωdek-M√≠stek,Frydek, Texas,Czech Republic,50
+Horn√≠ Lou?ky,Loucky, Nebraska,Czech Republic,50
+Host√Ωn,Hostyn, Texas,Czech Republic,50
+Hradec Kr√°lov√©,New Hradec, North Dakota,Czech Republic,50
+Karl√≠n,Karlin, Michigan,Czech Republic,50
+Karl√≠n,Karlin, Missouri,Czech Republic,50
 Karlovy Vary (German: Karlsbad),Carlsbad, New Mexico,Czech Republic,50
-KolÌn,Kolin, Louisiana,Czech Republic,50
-MalÌn (part of Kutn· Hora),Malin, Oregon,Czech Republic,50
+Kol√≠n,Kolin, Louisiana,Czech Republic,50
+Mal√≠n (part of Kutn√° Hora),Malin, Oregon,Czech Republic,50
 Lidice,Lidice, Illinois,Czech Republic,50
 Litice Castle,Lititz, Pennsylvania,Czech Republic,50
-M?lnÌk,Melnik, Wisconsin,Czech Republic,50
+M?ln√≠k,Melnik, Wisconsin,Czech Republic,50
 Nechanice,Nechanitz, Texas,Czech Republic,50
-Olomouc (German: Olm¸tz),Olmitz, Kansas,Czech Republic,50
+Olomouc (German: Olm√ºtz),Olmitz, Kansas,Czech Republic,50
 Pacov (German: Patzau),Patzau, Wisconsin,Czech Republic,50
-PÌsek,Pisek, North Dakota,Czech Republic,50
+P√≠sek,Pisek, North Dakota,Czech Republic,50
 Plze? (German: Pilsen),Pilsen, Kansas,Czech Republic,50
 Prague,New Prague, Minnesota,Czech Republic,50
 Prague,Prague, Oklahoma,Czech Republic,50
-ProtivÌn,Protivin, Iowa,Czech Republic,50
-Roûnov pod Radhoöt?m,Roznov, Texas,Czech Republic,50
+Protiv√≠n,Protivin, Iowa,Czech Republic,50
+Ro≈ænov pod Radho≈°t?m,Roznov, Texas,Czech Republic,50
 Roztoky,Rostok, Wisconsin,Czech Republic,50
 Slavkov u Brna (German: Austerlitz),Austerlitz, New York,Czech Republic,50
-T·bor,Tabor Township, Minnesota,Czech Republic,50
-VeselÌ nad LuûnicÌ,Veseli, Minnesota,Czech Republic,50
+T√°bor,Tabor Township, Minnesota,Czech Republic,50
+Vesel√≠ nad Lu≈ænic√≠,Veseli, Minnesota,Czech Republic,50
 Vod?any,Vodnany, South Dakota,Czech Republic,50
-VsetÌn,Vsetin, Texas,Czech Republic,50
+Vset√≠n,Vsetin, Texas,Czech Republic,50
 Copenhagen,Copenhagen, New York,Denmark,53
-Helsing¯r,Elsinore, Utah,Denmark,53
+Helsing√∏r,Elsinore, Utah,Denmark,53
 Nysted,Nysted, Nebraska,Denmark,53
 Odense,Odense, Kansas,Denmark,53
 Ringsted,Ringsted, Iowa,Denmark,53
@@ -511,8 +511,8 @@ Bordeaux,Bardo, Kentucky,France,68
 Bordeaux,Bordeaux, South Carolina,France,68
 Boulogne-sur-Mer,Boulogne, Florida,France,68
 Calais,Calais, Maine,France,68
-Ch‚teau de la Grange-BlÈneau,LaGrange, Georgia,France,68
-Ch‚teaugay,Chateaugay, New York,France,68
+Ch√¢teau de la Grange-Bl√©neau,LaGrange, Georgia,France,68
+Ch√¢teaugay,Chateaugay, New York,France,68
 Chantilly,Chantilly, Missouri,France,68
 Cherbourg,Cherbourg, North Carolina,France,68
 Clermont-Ferrand,Clermont, Florida,France,68
@@ -535,7 +535,7 @@ Montpellier,Montpelier, Vermont,France,68
 Montpellier,Montpelier, Ohio,France,68
 Montpellier,Montpelier, Indiana,France,68
 Nice,Nice, California,France,68
-OrlÈans,Orleans, New York,France,68
+Orl√©ans,Orleans, New York,France,68
 Paris,Paris, Arkansas,France,68
 Paris,Paris, Idaho,France,68
 Paris,Paris, Illinois,France,68
@@ -548,7 +548,7 @@ Paris,Paris, Texas,France,68
 Roanne,Roann, Indiana,France,68
 Roubaix,Roubaix, South Dakota,France,68
 Saint-Cloud,St. Cloud, Minnesota,France,68
-Sainte-MËre-…glise,Ste. Mere Eglise, North Carolina,France,68
+Sainte-M√®re-√âglise,Ste. Mere Eglise, North Carolina,France,68
 Saint-Omer,Saint Omer, Indiana,France,68
 Sedan,Sedan, Kansas,France,68
 Strasbourg,Strasburg, Pennsylvania,France,68
@@ -620,8 +620,8 @@ Landau,Lando, South Carolina,Germany,51
 Lastrup,Lastrup, Minnesota,Germany,51
 Leipzig,Leipsic, Ohio,Germany,51
 Lennep,Lennep, Montana,Germany,51
-L¸beck,Lubec, Maine,Germany,51
-L¸tzen,Lutsen Township, Minnesota,Germany,51
+L√ºbeck,Lubec, Maine,Germany,51
+L√ºtzen,Lutsen Township, Minnesota,Germany,51
 Mannheim,Manheim, Pennsylvania,Germany,51
 Mainz,Mentz, New York,Germany,51
 Marne,Marne, Iowa,Germany,51
@@ -629,7 +629,7 @@ Marne,Marne, Michigan,Germany,51
 Melle,New Melle, Missouri,Germany,51
 Meppen,Meppen, Illinois,Germany,51
 Minden,Minden, Louisiana,Germany,51
-M¸nster,Muenster, Texas,Germany,51
+M√ºnster,Muenster, Texas,Germany,51
 Munich,Munich, North Dakota,Germany,51
 Neuburg an der Donau,Newberg, Oregon,Germany,51
 Neu-Ulm,New Ulm, Minnesota,Germany,51
@@ -669,13 +669,13 @@ Nafpaktos (Venetian: Lepanto),Lepanto, Arkansas,Greece,82
 Tempe,Tempe, Arizona,Greece,82
 Thessaloniki,Salona, Pennsylvania,Greece,82
 Volos,Volo, Illinois,Greece,82
-Cop·n,Copan, Oklahoma,Honduras,90
+Cop√°n,Copan, Oklahoma,Honduras,90
 Buda,Buda, Illinois,Hungary,93
 Budapest,Budapest, Georgia,Hungary,93
 Szombathely,Siberia, Indiana,Hungary,93
 Tokaj,Tokaj, Georgia,Hungary,93
 Akranes,Akra Township, North Dakota,Iceland,102
-ﬁingvellir,Thingvalla Township, North Dakota,Iceland,102
+√ûingvellir,Thingvalla Township, North Dakota,Iceland,102
 Almora,Almora, Illinois,India,98
 Chennai,Madras, Oregon,India,98
 Delhi,Delhi Township, Michigan,India,98
@@ -774,7 +774,7 @@ Milan,Milan, Indiana,Italy,103
 Modena,Modena, Missouri,Italy,103
 ,,,,
 ,,,,
-MondovÏ,Mondovi, Wisconsin,Italy,103
+Mondov√¨,Mondovi, Wisconsin,Italy,103
 Naples,Naples, Florida,Italy,103
 Naples,Naples, Idaho,Italy,103
 Naples,Naples, New York,Italy,103
@@ -825,12 +825,12 @@ Buena Vista,Buena Vista, Mississippi,Mexico,149
 Buena Vista,Buena Vista Township, New Jersey,Mexico,149
 Camargo,Camargo, Illinois,Mexico,149
 Camargo Municipality,Camargo, Kentucky,Mexico,149
-Chalco de DÌaz Covarrubias,Chalco, Nebraska,Mexico,149
+Chalco de D√≠az Covarrubias,Chalco, Nebraska,Mexico,149
 Churubusco,Churubusco, Indiana,Mexico,149
-CÛrdoba,Cordova, Alabama,Mexico,149
+C√≥rdoba,Cordova, Alabama,Mexico,149
 Durango City,Durango, Colorado,Mexico,149
 La Paz,La Paz, Arizona,Mexico,149
-LeÛn,Leon, Monroe County,Mexico,149
+Le√≥n,Leon, Monroe County,Mexico,149
 Magdalena Contreras,Contreras, Indiana,Mexico,149
 Matamoros,Matamoras, Ohio,Mexico,149
 Matamoros,Matamoras, Pennsylvania,Mexico,149
@@ -892,7 +892,7 @@ Oslo,Oslo, Minnesota,Norway,159
 Paulsbo,Poulsbo, Washington,Norway,159
 Sandnes,Sandnes Township, Minnesota,Norway,159
 Solum,New Solum Township, Minnesota,Norway,159
-Sol¯r,Soler Township, Minnesota,Norway,159
+Sol√∏r,Soler Township, Minnesota,Norway,159
 Stavanger,Stavanger, Illinois,Norway,159
 Sundal,Sundal Township, Minnesota,Norway,159
 Trondheim,Nidaros Township, Minnesota,Norway,159
@@ -902,7 +902,7 @@ Kalat,Kelat, Kentucky,Pakistan,170
 Lahore,Lahore, Virginia,Pakistan,170
 Palestine,Palestine, Ohio,Palestine,238
 Palestine,East Palestine, Ohio,Palestine,238
-ColÛn,Colon, Michigan,Panama,165
+Col√≥n,Colon, Michigan,Panama,165
 Panama City,Panama City, Florida,Panama,165
 Portobelo,Portobello, Maryland,Panama,165
 Callao,Callao, Utah,Peru,166
@@ -910,16 +910,16 @@ Callao,Callao, Missouri,Peru,166
 Cerro de Pasco,Pasco, Washington,Peru,166
 Cusco,Cuzco, Indiana,Peru,166
 Lima,Lima, Ohio,Peru,166
-Per˙,Peru, Nebraska,Peru,166
-Per˙,Peru, Illinois,Peru,166
-Per˙,Peru, New York,Peru,166
-Per˙,Peru, Indiana,Peru,166
-Per˙,Peru, Kansas,Peru,166
-Per˙,Peru, Pennsylvania,Peru,166
-Per˙,Peru, Vermont,Peru,166
-Per˙,Peru, Maine,Peru,166
-Per˙,Peru, Iowa,Peru,166
-Per˙,Peru, West Virginia,Peru,166
+Per√∫,Peru, Nebraska,Peru,166
+Per√∫,Peru, Illinois,Peru,166
+Per√∫,Peru, New York,Peru,166
+Per√∫,Peru, Indiana,Peru,166
+Per√∫,Peru, Kansas,Peru,166
+Per√∫,Peru, Pennsylvania,Peru,166
+Per√∫,Peru, Vermont,Peru,166
+Per√∫,Peru, Maine,Peru,166
+Per√∫,Peru, Iowa,Peru,166
+Per√∫,Peru, West Virginia,Peru,166
 Manila,Manila, Arkansas,Philippines,169
 Manila,Manila, Utah,Philippines,169
 Cz?stochowa,Cestohowa, Texas,Poland,171
@@ -927,7 +927,7 @@ Elbl?g (German: Elbing),Elbing, Kansas,Poland,171
 Gda?sk (German: Danzig),Danzig, North Dakota,Poland,171
 Gniezno,Gnesen Township, Minnesota,Poland,171
 K?odzko (German: Glatz),New Glatz, Maryland,Poland,171
-KrakÛw,Krakow, Wisconsin,Poland,171
+Krak√≥w,Krakow, Wisconsin,Poland,171
 Lublin,Lublin, Wisconsin,Poland,171
 Miasteczko Kraje?skie (German: Friedheim),Friedheim, Missouri,Poland,171
 Opole,Opole, Minnesota,Poland,171
@@ -935,7 +935,7 @@ Pozna? (German: Posen),Posen, Illinois,Poland,171
 Pozna? (German: Posen),Posen, Michigan,Poland,171
 Radom,Radom, Illinois,Poland,171
 Szczecin (German: Stettin),Stettin, Wisconsin,Poland,171
-TarnÛw,Tarnov, Nebraska,Poland,171
+Tarn√≥w,Tarnov, Nebraska,Poland,171
 Toru?,Torun, Wisconsin,Poland,171
 Warsaw,Warsaw, Illinois,Poland,171
 Warsaw,Warsaw, Indiana,Poland,171
@@ -1056,25 +1056,25 @@ Kimberley,Kimberly, Missouri,South Africa,235
 Ladysmith,Ladysmith, Virginia,South Africa,235
 Pretoria,Pretoria, Georgia,South Africa,235
 Randburg,Randsburg, California,South Africa,235
-A CoruÒa,Corunna, Michigan,Spain,61
+A Coru√±a,Corunna, Michigan,Spain,61
 Aledo,Aledo, Illinois,Spain,61
 Alhambra (a building),Alhambra, California,Spain,61
 Alhambra (a building),Alhambra, Illinois,Spain,61
-AlmadÈn,New Almaden, California,Spain,61
+Almad√©n,New Almaden, California,Spain,61
 Altura,Altura, Minnesota,Spain,61
-¡vila,Avilla, Indiana,Spain,61
+√Åvila,Avilla, Indiana,Spain,61
 Barcelona,Barcelona, New York,Spain,61
-C·diz,Cadiz, Indiana,Spain,61
-C·diz,Cadiz, Kentucky,Spain,61
-C·diz,Cadiz, Ohio,Spain,61
+C√°diz,Cadiz, Indiana,Spain,61
+C√°diz,Cadiz, Kentucky,Spain,61
+C√°diz,Cadiz, Ohio,Spain,61
 Cartagena,Carthagena, Ohio,Spain,61
-CÛrdoba,Cordova, Nebraska,Spain,61
+C√≥rdoba,Cordova, Nebraska,Spain,61
 Galisteo,Galisteo, New Mexico,Spain,61
 Granada,Granada, Minnesota,Spain,61
 Iberia,Iberia, Missouri,Spain,61
 Laredo,Laredo, Texas,Spain,61
-LeÛn,Leon, New York,Spain,61
-LeÛn,Leon, Oklahoma,Spain,61
+Le√≥n,Leon, New York,Spain,61
+Le√≥n,Leon, Oklahoma,Spain,61
 Loja,Loxa, Illinois,Spain,61
 Madrid,Madrid, Alabama,Spain,61
 Madrid,Madrid, Colorado,Spain,61
@@ -1083,9 +1083,9 @@ Madrid,Madrid, Nebraska,Spain,61
 Madrid,Madrid, New Mexico,Spain,61
 Madrid,Madrid, New York,Spain,61
 Madrid,New Madrid, Missouri,Spain,61
-M·laga,Malaga, New Jersey,Spain,61
-M·laga,Malaga, New Mexico,Spain,61
-MahÛn,Port Mahon, Delaware,Spain,61
+M√°laga,Malaga, New Jersey,Spain,61
+M√°laga,Malaga, New Mexico,Spain,61
+Mah√≥n,Port Mahon, Delaware,Spain,61
 Oviedo,Oviedo, Florida,Spain,61
 Palos de la Frontera,Palos Park, Illinois,Spain,61
 Segovia,Segovia, Texas,Spain,61
@@ -1108,22 +1108,22 @@ Dannemora,Dannemora, New York,Sweden,189
 Falun,Falun Township, Minnesota,Sweden,189
 Forsby,Forsby, North Dakota,Sweden,189
 Gothenburg,Gothenburg, Nebraska,Sweden,189
-G‰vle,Galva, Illinois,Sweden,189
+G√§vle,Galva, Illinois,Sweden,189
 Kalmar,Calmar, Iowa,Sweden,189
 Karlstad,Karlstad, Minnesota,Sweden,189
 Karlsborg,Carlsborg, Washington,Sweden,189
 Linsell,Linsell Township, Minnesota,Sweden,189
 Lund,Lund, Wisconsin,Sweden,189
-Malmˆ,Malmo, Nebraska,Sweden,189
+Malm√∂,Malmo, Nebraska,Sweden,189
 Malung,Malung Township, Minnesota,Sweden,189
 Mora,Mora, Minnesota,Sweden,189
 Nora,Nora, Indianapolis,Sweden,189
 Ronneby,Ronneby, Minnesota,Sweden,189
-SkÂne,Skanee, Michigan,Sweden,189
+Sk√•ne,Skanee, Michigan,Sweden,189
 Stockholm,Stockholm, New York,Sweden,189
 Taberg,Taberg, New York,Sweden,189
 Uppsala,Upsala, Minnesota,Sweden,189
-ƒlvsborg fortress,Elsinboro Township, New Jersey,Sweden,189
+√Ñlvsborg fortress,Elsinboro Township, New Jersey,Sweden,189
 Sweden,Sweden, Maine,Sweden,189
 Altdorf,Altorf, Illinois,Switzerland,39
 Bern,Berne, Indiana,Switzerland,39
@@ -1141,11 +1141,11 @@ Lenzburg,Lenzburg, Illinois,Switzerland,39
 Lucerne,Lucerne, Indiana,Switzerland,39
 Maienfeld,Mayfield, Wisconsin,Switzerland,39
 Metzerlen-Mariastein,Maria Stein, Ohio,Switzerland,39
-Neuch‚tel,Neuchatel, Kansas,Switzerland,39
-R¸tli,Gruetli-Laager, Tennessee,Switzerland,39
+Neuch√¢tel,Neuchatel, Kansas,Switzerland,39
+R√ºtli,Gruetli-Laager, Tennessee,Switzerland,39
 Vevey,Vevay, Indiana,Switzerland,39
 Winterthur,Winterthur, Delaware,Switzerland,39
-Z¸rich,Zurich, Kansas,Switzerland,39
+Z√ºrich,Zurich, Kansas,Switzerland,39
 Almelo,New Almelo, Kansas,The Netherlands,158
 Amsterdam,Amsterdam, Georgia,The Netherlands,158
 Amsterdam,Amsterdam, Missouri,The Netherlands,158
@@ -1207,7 +1207,7 @@ Selz (now Lymanske),Selz, North Dakota (Emmons County),Ukraine,219
 Sevastopol,Sebastopol, California,Ukraine,219
 Sevastopol,Sebastopol, Michigan,Ukraine,219
 Sevastopol,Sevastopol, Wisconsin,Ukraine,219
-Straﬂburg (now Kuchurhan,Strasburg, North Dakota,Ukraine,219
+Stra√üburg (now Kuchurhan,Strasburg, North Dakota,Ukraine,219
 Montevideo,Montevideo, Minnesota,Uruguay,221
 Samarkand,Samarcand, North Carolina,Uzbekistan,222
 Bala,Bala Cynwyd, Pennsylvania,Wales,241
