@@ -1,27 +1,39 @@
-// use this for game logic and state
+import React, { useState } from 'react';
+import StatisticsModal from '../app/StatisticsModal'; 
 
-let goal = {name: "Andorra", id: 1}
-let guess_count = 0
-const max_guesses = 5;
-
-export function make_guess(guess) {
+export function make_guess(goal, guess, setGuessCount, guessCount, setShowStats) {
     if (guess.id === goal.id) {
-        win_game();
-        return;
-    }
-    guess_count++;
-    // add country to the info panel here,
-    console.log(guess_count)
-    if (guess_count >= max_guesses) {
-        lose_game();
+        winGame(setShowStats);
+    } else {
+        setGuessCount(guessCount + 1);
+        if (guessCount >= maxGuesses) {
+            loseGame(setShowStats);
+        }
     }
 }
 
-export function win_game() {
-    // say you won, then stats
-    console.log("You win")
+function winGame(setShowStats) {
+    console.log("You win");
+    setShowStats(true);
 }
-export function lose_game() {
-    // show answer then stats 
-    console.log("Game Over")
+
+function loseGame(setShowStats) {
+    console.log("Game Over");
+    setShowStats(true);
 }
+
+function Game() {
+    const [goal, setGoal] = useState({ name: "Andorra", id: 1 });
+    const [guessCount, setGuessCount] = useState(0);
+    const [showStats, setShowStats] = useState(false);
+    const maxGuesses = 5;
+
+    return (
+        <div>
+            <button onClick={() => makeGuess(goal, { id: 2 }, setGuessCount, guessCount, setShowStats)}>Guess</button>
+            {showStats && <StatisticsModal setShowStats={setShowStats} score={guessCount} />}
+        </div>
+    );
+}
+
+export default Game;
