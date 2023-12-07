@@ -10,15 +10,18 @@ function registerObserver(fn) {
 }
 
 export function addGuess(guess) {
-  guesses_list.push({direction: 'ERROR', country: guess.name})
-  observers.forEach((func) => func())
+  const new_data = {
+    direction: 'ERROR',
+    country: guess.name
+  }
+  observers.forEach((func) => func(new_data))
 }
 
 export default function InfoPanel() {
   const [infoPanelData, setInfoPanelData] = useState([])
 
-  function updateInfoPanel() {
-    setInfoPanelData(guesses_list)
+  function updateInfoPanel(data) {
+    setInfoPanelData([...infoPanelData, data])
   }
   function directionToEmoji(dir) {
     switch(dir) {
