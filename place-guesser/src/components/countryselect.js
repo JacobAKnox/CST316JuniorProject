@@ -3,6 +3,7 @@
 import React, {useState, useEffect} from 'react'
 import CountryItem from './countryitem';
 import { make_guess } from '@/game/game';
+import { signal_event } from '@/lib/events';
 
 function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
@@ -37,6 +38,7 @@ export default function CountrySearchBox() {
 
     const submitGuess = (e) => {
         make_guess(country)
+        signal_event("guess_made", country)
     }
  
     return (
