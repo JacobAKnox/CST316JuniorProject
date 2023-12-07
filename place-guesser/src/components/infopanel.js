@@ -58,8 +58,8 @@ export default function InfoPanel() {
   observers = []
   observers.push(updateInfoPanel)
   return(
-    <div>
-      <div className="pl-2 pr-2">
+    <div className="h-32">
+      <div className="min-h-full pl-2 pr-2">
           {infoPanelData.map((data, index) => {
             return (
               <div key={index} className="flex gap-x-1">
