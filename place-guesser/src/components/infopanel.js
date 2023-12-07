@@ -2,26 +2,24 @@
 
 import {useState} from 'react'  
 
+let observers = []
+let guesses_list = []
+
+function registerObserver(fn) {
+  observers.push(fn)
+}
+
+export function addGuess(guess) {
+  guesses_list.push({direction: 'ERROR', country: guess.name})
+  observers.forEach((func) => func())
+}
+
 export default function InfoPanel() {
-  const [directionInput, setDirectionInput] = useState('')
-  const [countryInput, setCountryInput] = useState('')
   const [infoPanelData, setInfoPanelData] = useState([])
 
-  function handleDirectionChange(event) {
-    setDirectionInput(event.target.value)
+  function updateInfoPanel() {
+    setInfoPanelData(guesses_list)
   }
-  function handleCountryChange(event) {
-    setCountryInput(event.target.value)
-  }
-  function handleClick() {
-    const newData = {
-      direction: directionInput,
-      country: countryInput
-    }
-
-    setInfoPanelData((prevData) => [...prevData, newData])
-  }
-
   function directionToEmoji(dir) {
     switch(dir) {
       case "North":
@@ -54,12 +52,14 @@ export default function InfoPanel() {
     }
   }
 
+  observers = []
+  observers.push(updateInfoPanel)
   return(
     <div>
       <div className="pl-2 pr-2">
-          {infoPanelData.map((data) => {
+          {infoPanelData.map((data, index) => {
             return (
-              <div className="flex gap-x-1">
+              <div key={index} className="flex gap-x-1">
                 <p className="pl-4 mb-1 font-semibold">
                   {directionToEmoji(data.direction)}
                 </p>
@@ -68,14 +68,7 @@ export default function InfoPanel() {
             )
           })}
       </div>
-      {/* Testpanel to simulate writing to infopanel, temporary */}
-      <div>
-        <input className="mb-2" placeHolder="Direction (North, South, etc.)" value={directionInput} onChange={handleDirectionChange}/>
-        <br></br>
-        <input className="mb-2" placeHolder="Country Name" value={countryInput} onChange={handleCountryChange}/>
-        <br></br>
-        <button className="font-bold" onClick={handleClick}>Insert</button>
-      </div>
     </div>
   )  
 }
+
