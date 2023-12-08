@@ -27,3 +27,12 @@ export function lose_game() {
     // show answer then stats 
     console.log("Game Over")
 }
+
+export function generatePuzzle (list){
+    const keys = Object.keys(list)
+    let random_number = Math.floor(Math.random() * 1231) + 1;
+    const randomKey = keys[random_number];
+    console.log(randomKey)
+    const randomItem = list[randomKey];
+    return {key: randomKey, item: randomItem}
+}
