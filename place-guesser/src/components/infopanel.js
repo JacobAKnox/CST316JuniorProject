@@ -15,14 +15,72 @@ function calculateDirection(guess_pos) {
     lat: goal.latitude,
     lon: goal.longitude
   }
-  let result = ""
 
   const lat_diff = goal_pos.lat - guess_pos.lat
   const lon_diff = goal_pos.lon - guess_pos.lon
+  
+  let quadrant
+  if (lon_diff < 0) {
+    if (lat_diff < 0) {
+      quadrant = 3
+    }
+    else {
+      quadrant = 2
+    }
+  }
+  else {
+    if (lat_diff < 0) {
+      quadrant = 4
+    }
+    else {
+      quadrant = 1
+    }
+  }
 
-  result += (lat_diff < 0) ? "South" : "North"
-  result += (lon_diff < 0) ? "West" : "East"
+  const angle = (180 / Math.PI) * Math.atan(lon_diff/lat_diff)
 
+  switch (quadrant) {
+    case 1:
+      if (angle <= 15) {
+        return "North"
+      }
+      else if (angle <= 75) {
+        return "NorthEast"
+      }
+      else {
+        return "East"
+      }
+    case 2:
+      if (angle <= 15) {
+        return "North"
+      }
+      else if (angle <= 75) {
+        return "NorthWest"
+      }
+      else {
+        return "West" 
+      }
+    case 3:
+      if (angle <= 15) {
+        return "South"
+      }
+      else if (angle <= 75) {
+        return "SouthWest"
+      }
+      else {
+        return "West" 
+      }
+    case 4:
+      if (angle <= 15) {
+        return "South"
+      }
+      else if (angle <= 75) {
+        return "SouthEast"
+      }
+      else {
+        return "East" 
+      }
+  }
   return result
 }
 
