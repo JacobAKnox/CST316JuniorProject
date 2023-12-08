@@ -52,13 +52,13 @@ function calculateDirection(guess_pos) {
       }
     case 2:
       if (angle <= 15) {
-        return "North"
+        return "West"
       }
       else if (angle <= 75) {
         return "NorthWest"
       }
       else {
-        return "West" 
+        return "North" 
       }
     case 3:
       if (angle <= 15) {
