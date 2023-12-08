@@ -1,7 +1,7 @@
 // use this for game logic and state
 import {addGuess} from '../components/infopanel'
 
-let goal = {name: "Andorra", id: 1}
+export let goal = {name: "Andorra", id: 1, latitude: 42.546245, longitude: 1.601554}
 let guess_count = 0
 const max_guesses = 5;
 
