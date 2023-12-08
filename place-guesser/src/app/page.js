@@ -1,6 +1,7 @@
 import CountrySearchBox from '../components/countryselect'
 import dynamic from "next/dynamic"
 import InfoPanel from '../components/infopanel'
+import StatisticsModal from '@/components/StatisticsModal'
 
 const MapView = dynamic(() => import('@/components/map'), {ssr:false})
 
@@ -10,6 +11,7 @@ export default function Home() {
       <CountrySearchBox/>
       <MapView/>
       <InfoPanel/>
+      <StatisticsModal/>
     </main>
   )
 }
