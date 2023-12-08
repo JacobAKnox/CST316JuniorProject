@@ -10,7 +10,7 @@ function StatisticsModal({ setShowStats }) {
         fetch('/api/get_scores') 
             .then(response => response.json())
             .then(data => {
-                setScoreData(data);
+                setScoreData(data[0]);
                 setShowScores(true);
             })
             .catch(error => {
@@ -30,10 +30,10 @@ function StatisticsModal({ setShowStats }) {
                     <div className="ml-5 p-5 border w-[600px] shadow-lg rounded-3xl bg-white">
                         <div className="mt-3 text-center">
                             <h3 className="text-lg leading-6 font-medium text-gray-900">Your Statistics</h3>
-                            <p>Your Score: {scoreData ? scoreData.guessCount : 'Loading...'}</p>
+                            <p className='text-gray-900'>Your Score: {scoreData ? scoreData.guessCount : 'Loading...'}</p>
                             {/* Here you can add a STAT bar based on scoreData */}
                             <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
-                                    onClick={() => setShowStats(false)}>
+                                    onClick={() => setShowScores(false)}>
                                 Close
                             </button>
                         </div>
