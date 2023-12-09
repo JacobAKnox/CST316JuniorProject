@@ -47,15 +47,19 @@ export function make_guess(guess) {
     console.log(guess_count)
     if (guess_count >= max_guesses) {
         lose_game();
+        return;
     }
+    signal_event("guess_made", guess)
 }
 
 export function win_game() {
     // say you won, then stats
+    signal_event("game_over", goal)
     console.log("You win")
 }
 export function lose_game() {
     // show answer then stats 
+    signal_event("game_over", goal)
     console.log("Game Over")
 }
 

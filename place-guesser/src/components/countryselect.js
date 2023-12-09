@@ -38,7 +38,6 @@ export default function CountrySearchBox() {
 
     const submitGuess = (e) => {
         make_guess(country)
-        signal_event("guess_made", country)
     }
  
     return (

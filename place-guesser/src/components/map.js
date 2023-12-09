@@ -39,6 +39,11 @@ function MapController({event}) {
         p.addTo(map)
     }
 
+    const move_goal = (goal) => {
+        map.fitBounds(goal.bounds)
+        marker(latLng(goal.latitude, goal.longitude)).addTo(map)
+    }
+
     const init_pin = () => {
         marker(puzzle.latlong).addTo(map)
     }
@@ -50,6 +55,7 @@ function MapController({event}) {
     subscribe(event, move_focus)
     subscribe("init_pin", init_pin)
     subscribe("init_bounds", init_bounds)
+    subscribe("game_over", move_goal)
 
     return null;
 }
