@@ -1,5 +1,3 @@
-import CountrySearchBox from './countryselect'
-import RootLayout from './layout'
 import GameLink from './gameLink'
 
 export default function Home() {
@@ -10,15 +8,15 @@ export default function Home() {
           <title>Place Guesser</title>
         </head>
         <body>
-          <div class="topBar">
-            <div class="gameIcon-row">
+          <div className="topBar">
+            <div className="gameIcon-row">
               <img src="icons/game-icon-100px.png" alt="FAIL" />
             </div>
           </div>
-          <div class="homePageTitleContainer">
-            <p class="homePageTitle">Welcome to</p>
-            <p class="homePageTitle">Place Guesser</p>
-            <div class="playButtonContainer">
+          <div className="homePageTitleContainer">
+            <p className="homePageTitle">Welcome to</p>
+            <p className="homePageTitle">Place Guesser</p>
+            <div className="playButtonContainer">
               <GameLink></GameLink>
             </div>
           </div>
