@@ -1,3 +1,4 @@
+const { MongoClient } = require('mongodb');
 function generatePuzzle (){
 
     const list = {
@@ -49,4 +50,32 @@ function generatePuzzle (){
     return {key: randomKey, item: randomItem}
 }
 
-generatePuzzle()
+
+
+async function connectToMongoDB() {
+
+    const connectionString = 'mongodb://localhost:27017';
+    const databaseName = 'PlaceGuesser';
+    const collectionName = 'Puzzles';
+
+  const client = new MongoClient(connectionString);
+
+  try {
+    await client.connect();
+    console.log('Connected to MongoDB');
+
+    const db = client.db(databaseName);
+
+    const collection = db.collection(collectionName);
+
+    const puzzles = await collection.find().toArray();
+
+    console.log('Puzzles:');
+    console.log(puzzles);
+  } finally {
+    await client.close();
+    console.log('Connection closed');
+  }
+}
+
+connectToMongoDB();
