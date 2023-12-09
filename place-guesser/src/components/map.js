@@ -7,16 +7,16 @@ import { latLng, latLngBounds, marker } from "leaflet";
 import React, { useState } from "react";
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 
-export default function MapView() {
+export default function MapView({event}) {
     return (
-        <div className="w-1/2 h-96 content-center">
+        <div className="w-1/2 h-96 content-center p-3">
             <MapContainer className="h-full w-full content-center" center={[51.505, -0.09]} zoom={13} 
             scrollWheelZoom={false} dragging={false} zoomControl={false}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <MapController event="guess_made"/>
+                <MapController event={event}/>
             </MapContainer>
         </div>
     );
