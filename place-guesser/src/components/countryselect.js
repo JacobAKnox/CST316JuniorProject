@@ -16,7 +16,7 @@ export default function CountrySearchBox() {
     const [countries, setCountries] = useState([]);
 
     useEffect(() => {
-        fetch("/countries")
+        fetch("/api/countries")
         .then(response => response.json())
         .then(data => setCountries(data))
     }, [])
