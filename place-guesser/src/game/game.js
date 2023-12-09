@@ -1,12 +1,43 @@
 // use this for game logic and state
+import { signal_event } from '@/lib/events';
 import {addGuess} from '../components/infopanel'
+import { convert_bounds, convert_latlng } from '@/lib/geoconversions';
 
-export let goal = {name: "Andorra", id: 1, latitude: 42.546245, longitude: 1.601554}
+export let goal = {Country: "Andorra", ForiegnPlace: "Angola", CountryId: 1}
+export let puzzle = {USPlace: "Angola", State: "New York"}
 let guess_count = 0
 const max_guesses = 5;
 
+prepare()
+
+function prepare() {
+    fetch(`/api/countries/location?name=${goal.Country}`)
+    .then(res => res.json())
+    .then(res => {
+        goal.latitude = res.location.lat
+        goal.longitude = res.location.lng
+    })
+    fetch(`/api/countries/bounds?name=${goal.Country}`)
+    .then(res => res.json())
+    .then(res => {
+        goal.bounds = convert_bounds(res.bounds)
+    })
+    fetch(`/api/countries/bounds?name=${puzzle.State + " State"}`)
+    .then(res => res.json())
+    .then(res => {
+        puzzle.bounds = convert_bounds(res.bounds)
+        signal_event("init_bounds")
+    })
+    fetch(`/api/countries/location?name=${puzzle.USPlace + " " + puzzle.State}`)
+    .then(res => res.json())
+    .then(res => {
+        puzzle.latlong = convert_latlng(res.location)
+        signal_event("init_pin")
+    })
+}
+
 export function make_guess(guess) {
-    if (guess.id === goal.id) {
+    if (guess.id === goal.CountryId) {
         win_game();
         return;
     }
@@ -16,15 +47,19 @@ export function make_guess(guess) {
     console.log(guess_count)
     if (guess_count >= max_guesses) {
         lose_game();
+        return;
     }
+    signal_event("guess_made", guess)
 }
 
 export function win_game() {
     // say you won, then stats
+    signal_event("game_over", goal)
     console.log("You win")
 }
 export function lose_game() {
     // show answer then stats 
+    signal_event("game_over", goal)
     console.log("Game Over")
 }
 

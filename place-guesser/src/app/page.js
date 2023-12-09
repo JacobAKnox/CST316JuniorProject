@@ -1,9 +1,9 @@
-import CountrySearchBox from '../components/countryselect'
 import dynamic from "next/dynamic"
-import InfoPanel from '../components/infopanel'
 import StatisticsModal from '@/components/StatisticsModal'
 
 const MapView = dynamic(() => import('@/components/map'), {ssr:false})
+const CountrySearchBox = dynamic(() => import('@/components/countryselect'), {ssr: false})
+const InfoPanel = dynamic(() => import('@/components/infopanel'), {ssr:false})
 
 export default function Home() {
   return (

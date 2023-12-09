@@ -1,9 +1,11 @@
 "use client"
 
+import { puzzle } from "@/game/game";
 import { subscribe } from "@/lib/events";
-import { latLng, marker } from "leaflet";
+import { convert_bounds } from "@/lib/geoconversions";
+import { latLng, latLngBounds, marker } from "leaflet";
 import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, useMap } from "react-leaflet";
 
 export default function MapView() {
     return (
@@ -22,20 +24,38 @@ export default function MapView() {
 
 function MapController({event}) {
     const map = useMap()
-    const [pin, setPin] = useState(null)
 
     const move_focus = (location) => {
+        fetch(`/api/countries/bounds?name=${location.name}`)
+        .then(response => response.json())
+        .then((res) => {
+            // therers weird bounds returned by countries that have far off islands and stuff
+            // not really worth fixing
+            const b = convert_bounds(res.bounds)
+            map.fitBounds(b)
+        })
         const ll = latLng(location.latitude, location.longitude)
-        map.setView(ll, 3)
         let p = marker(ll)
-        if (pin !== null) {
-            map.removeControl(pin)
-        }
-        setPin(p)
         p.addTo(map)
     }
 
+    const move_goal = (goal) => {
+        map.fitBounds(goal.bounds)
+        marker(latLng(goal.latitude, goal.longitude)).addTo(map)
+    }
+
+    const init_pin = () => {
+        marker(puzzle.latlong).addTo(map)
+    }
+
+    const init_bounds = () => {
+        map.fitBounds(puzzle.bounds)
+    }
+
     subscribe(event, move_focus)
+    subscribe("init_pin", init_pin)
+    subscribe("init_bounds", init_bounds)
+    subscribe("game_over", move_goal)
 
     return null;
 }
