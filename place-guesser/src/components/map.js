@@ -1,7 +1,7 @@
 "use client"
 
 import { subscribe } from "@/lib/events";
-import { latLng, marker } from "leaflet";
+import { latLng, latLngBounds, marker } from "leaflet";
 import React, { useState } from "react";
 import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
 
@@ -22,16 +22,20 @@ export default function MapView() {
 
 function MapController({event}) {
     const map = useMap()
-    const [pin, setPin] = useState(null)
 
     const move_focus = (location) => {
+        fetch(`/api/countries/bounds?name=${location.name}`)
+        .then(response => response.json())
+        .then((res) => {
+            // therers weird bounds returned by countries that have far off islands and stuff
+            // not really work fixing
+            const c1 = latLng(res.bounds.northeast.lat, res.bounds.northeast.lng)
+            const c2 = latLng(res.bounds.southwest.lat, res.bounds.southwest.lng)
+            const b = latLngBounds(c1, c2)
+            map.fitBounds(b)
+        })
         const ll = latLng(location.latitude, location.longitude)
-        map.setView(ll, 3)
         let p = marker(ll)
-        if (pin !== null) {
-            map.removeControl(pin)
-        }
-        setPin(p)
         p.addTo(map)
     }
 
