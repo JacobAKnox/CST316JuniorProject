@@ -1,6 +1,6 @@
 # CST316JuniorProject
 
-Team: Jacob Knox, 
+Team: Jacob Knox, Joseph Ten Eyck,
 
 to run:
 in ./place-guesser run:
