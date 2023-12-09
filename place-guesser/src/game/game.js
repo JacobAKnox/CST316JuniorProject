@@ -6,7 +6,7 @@ import { convert_bounds, convert_latlng } from '@/lib/geoconversions';
 export let goal = {Country: "Andorra", ForiegnPlace: "Angola", CountryId: 1}
 export let puzzle = {USPlace: "Angola", State: "New York"}
 let guess_count = 0
-export const maxGuesses = 5;
+export const max_guesses = 5;
 
 prepare()
 
@@ -42,15 +42,15 @@ export function make_guess(guess) {
         return;
     }
     guess_count++;
-    // add country to the info panel here,
-    addGuess(guess)
-    console.log(guess_count)
+    addGuess(guess); // add country to the info panel
+
     if (guess_count >= max_guesses) {
         lose_game();
         return;
     }
-    signal_event("guess_made", guess)
+    signal_event("guess_made", guess);
 }
+
 
 export function getGuessCount() {
     return guess_count;

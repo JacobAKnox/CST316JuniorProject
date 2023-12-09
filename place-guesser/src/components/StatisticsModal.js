@@ -1,16 +1,16 @@
 'use client'
 
 import React, { useState } from 'react';
-import { getGuessCount, maxGuesses } from '@/game/game';
+import { getGuessCount, max_guesses } from '@/game/game';
 
 function StatisticsModal({ setShowStats }) {
     const [scoreData, setScoreData] = useState(null);
     const [showScores, setShowScores] = useState(false);
-    
-    const calculateScore = (guessCount) => {      
-        return maxGuesses - guessCount + 1;
-    };
 
+    const calculateScore = (guessCount) => {
+        return Math.max(0, max_guesses - guessCount + 1);
+    };
+    
     const fetchScores = () => {
         fetch('/api/get_scores')
             .then(response => response.json())
@@ -33,12 +33,13 @@ function StatisticsModal({ setShowStats }) {
             </button>
             {showScores && (
                 <div className="fixed inset-0 bg-gray-600 bg-opacity-0 overflow-y-auto h-full w-full flex items-end justify-center">
-                    <div className="p-5 border w-[500px] shadow-lg rounded-3xl bg-white">
+                    <div className="p-5 border w-[400px] shadow-lg rounded-3xl bg-white">
                         <div className="mt-3 text-center">
                             <h3 className="text-lg leading-6 font-medium text-gray-900">Your Statistics</h3>
                             <p className='text-gray-800'>
-                                Your Score: 
-                                {scoreData ? calculateScore(scoreData.guessCount) : 'Loading...'}
+                                 {scoreData && scoreData.guessCount >= max_guesses ? 
+                                   "Game Over" : 
+                                   `Your Score: ${calculateScore(scoreData.guessCount)}`}
                             </p>
                             {/* Here you can add a STAT bar based on scoreData */}
                             <button 
