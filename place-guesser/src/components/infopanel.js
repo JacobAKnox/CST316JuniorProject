@@ -1,6 +1,7 @@
 'use client'
 
 import {useState} from 'react'  
+import {goal} from '../game/game.js'
 
 let observers = []
 let guesses_list = []
@@ -9,9 +10,83 @@ function registerObserver(fn) {
   observers.push(fn)
 }
 
+function calculateDirection(guess_pos) {
+  const goal_pos = {
+    lat: goal.latitude,
+    lon: goal.longitude
+  }
+
+  const lat_diff = goal_pos.lat - guess_pos.lat
+  const lon_diff = goal_pos.lon - guess_pos.lon
+  
+  let quadrant
+  if (lon_diff < 0) {
+    if (lat_diff < 0) {
+      quadrant = 3
+    }
+    else {
+      quadrant = 2
+    }
+  }
+  else {
+    if (lat_diff < 0) {
+      quadrant = 4
+    }
+    else {
+      quadrant = 1
+    }
+  }
+
+  const angle = (180 / Math.PI) * Math.atan(lon_diff/lat_diff)
+
+  switch (quadrant) {
+    case 1:
+      if (angle <= 15) {
+        return "North"
+      }
+      else if (angle <= 75) {
+        return "NorthEast"
+      }
+      else {
+        return "East"
+      }
+    case 2:
+      if (angle <= 15) {
+        return "West"
+      }
+      else if (angle <= 75) {
+        return "NorthWest"
+      }
+      else {
+        return "North" 
+      }
+    case 3:
+      if (angle <= 15) {
+        return "South"
+      }
+      else if (angle <= 75) {
+        return "SouthWest"
+      }
+      else {
+        return "West" 
+      }
+    case 4:
+      if (angle <= 15) {
+        return "South"
+      }
+      else if (angle <= 75) {
+        return "SouthEast"
+      }
+      else {
+        return "East" 
+      }
+  }
+  return result
+}
+
 export function addGuess(guess) {
   const new_data = {
-    direction: 'ERROR',
+    direction: calculateDirection({lat: guess.latitude, lon: guess.longitude}),
     country: guess.name
   }
   observers.forEach((func) => func(new_data))
@@ -37,16 +112,16 @@ export default function InfoPanel() {
       case "East":
         return '➡️'
         break
-      case "Northwest": 
+      case "NorthWest": 
         return '↖️'
         break
-      case "Southwest":
+      case "SouthWest":
         return '↙️'
         break
-      case "Northeast":
+      case "NorthEast":
         return '↗️'
         break
-      case "Southeast":
+      case "SouthEast":
         return '↘️'
         break
       default:
