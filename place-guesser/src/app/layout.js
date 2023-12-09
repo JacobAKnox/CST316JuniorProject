@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
+import NextTopLoader from 'nextjs-toploader';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,8 @@ export default function RootLayout({ children }) {
             crossOrigin=""></script>
       </head>
       <body className={inter.className}>{children}</body>
+      
     </html>
   )
 }
+
