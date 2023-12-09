@@ -1,9 +1,11 @@
 "use client"
 
+import { puzzle } from "@/game/game";
 import { subscribe } from "@/lib/events";
+import { convert_bounds } from "@/lib/geoconversions";
 import { latLng, latLngBounds, marker } from "leaflet";
 import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, useMap } from "react-leaflet";
 
 export default function MapView() {
     return (
@@ -28,10 +30,8 @@ function MapController({event}) {
         .then(response => response.json())
         .then((res) => {
             // therers weird bounds returned by countries that have far off islands and stuff
-            // not really work fixing
-            const c1 = latLng(res.bounds.northeast.lat, res.bounds.northeast.lng)
-            const c2 = latLng(res.bounds.southwest.lat, res.bounds.southwest.lng)
-            const b = latLngBounds(c1, c2)
+            // not really worth fixing
+            const b = convert_bounds(res.bounds)
             map.fitBounds(b)
         })
         const ll = latLng(location.latitude, location.longitude)
@@ -39,7 +39,17 @@ function MapController({event}) {
         p.addTo(map)
     }
 
+    const init_pin = () => {
+        marker(puzzle.latlong).addTo(map)
+    }
+
+    const init_bounds = () => {
+        map.fitBounds(puzzle.bounds)
+    }
+
     subscribe(event, move_focus)
+    subscribe("init_pin", init_pin)
+    subscribe("init_bounds", init_bounds)
 
     return null;
 }
