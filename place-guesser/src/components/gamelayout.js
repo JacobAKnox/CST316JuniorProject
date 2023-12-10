@@ -69,7 +69,7 @@ export default function GameLayout() {
             </div>
             { gameOver && gameWon &&
             <div className="m-10 w-1/3 text-center bg-slate-400 px-5 py-2 rounded-3xl">
-                You got it in {guesses} geuss(es)!
+                You got it in {guesses} guess(es)!
             </div>
             }   
             { gameOver && !gameWon &&
