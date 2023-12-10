@@ -1,8 +1,10 @@
 // use this for game logic and state
+import Cookies from 'js-cookie'
 import { signal_event } from '@/lib/events';
 import {addGuess} from '../components/infopanel'
 import { convert_bounds, convert_latlng } from '@/lib/geoconversions';
 import { useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 export let goal = {Country: "Andorra", ForiegnPlace: "Angola", CountryId: 1}
 export let puzzle = {USPlace: "Angola", State: "New York"}
@@ -73,12 +75,43 @@ export function win_game() {
     game_won = true;
     signal_event("game_over", goal)
     delay_map_udpate(goal, puzzle)
+    finish_game()
 }
 export function lose_game() {
     // show answer then stats 
     console.log("lose")
     signal_event("game_over", goal)
     delay_map_udpate(goal, puzzle)
+    finish_game()
+}
+
+async function finish_game() {
+  let userid = Cookies.get('userid')
+  const current_date = new Date()
+  const current_year = current_date.getFullYear()
+  const current_month = current_date.getMonth()+1
+  const current_day = current_date.getDate()
+  
+  if (userid == null) {
+    userid = uuidv4();
+    Cookies.set('userid', userid, { expires: 365 })
+  }
+
+  const response = await fetch('/api/save_scores', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      userid: userid, 
+      score: guess_count,
+      date: {
+        year: current_year,
+        month: current_month,
+        day: current_day
+      }
+    }),
+  })
 }
 
 async function delay_map_udpate(dataa, datab) {

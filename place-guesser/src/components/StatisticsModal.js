@@ -1,13 +1,17 @@
 'use client'
 
 import React, { useState } from 'react';
+import Cookies from 'js-cookie'
 import { getGuessCount, max_guesses } from '@/game/game';
 import { v4 as uuidv4 } from 'uuid';
 
 function StatisticsModal({ setShowStats }) {
-    const [scoreData, setScoreData] = useState(null);
+    const [scoreData, setScoreData] = useState([]);
     const [showScores, setShowScores] = useState(false);
 
+    function updateStatisticsModal(data) { 
+      setScoreData([...scoreData, data])
+    }
     // Generate a session ID using UUID v4
     const sessionID = uuidv4();
 
@@ -15,6 +19,7 @@ function StatisticsModal({ setShowStats }) {
         return Math.min(guessCount, max_guesses);
     };
 
+  /*
     // Function to post the score
     const postScore = (guessCount) => {
         fetch('/api/save_scores', {
@@ -32,10 +37,41 @@ function StatisticsModal({ setShowStats }) {
             console.error('Error saving score:', error);
         });
     };
+  */
 
     // Function to fetch scores
-    const fetchScores = () => {
-        fetch('/api/get_scores')
+    async function fetchScores() {
+        let userid = Cookies.get('userid')
+        let userscores_list = []
+        let todays_score = 0
+        
+        if (userid) {
+          const response = await fetch(`/api/get_scores?userid=${userid}`, {
+            method: 'GET'
+          })
+        
+          if (response.ok) {
+            alert(`fetched score for user ${userid} successfully`)
+          } else {
+            alert('failed to fetch scores')
+          }
+           
+           const response_data = await response.json()
+           userscores_list = response_data.userscores
+        }
+        
+
+      console.log('userscores_list = ')
+      console.log(userscores_list)
+      if (userscores_list.length > 0) {
+        todays_score = userscores_list[userscores_list.length-1].score
+      }
+
+      console.log('todays_score = ' + todays_score)
+      updateStatisticsModal(todays_score) 
+      setShowScores(true)
+
+            /*
             .then(response => response.json())
             .then(data => {
                 const guessCount = getGuessCount();
@@ -48,6 +84,7 @@ function StatisticsModal({ setShowStats }) {
             .catch(error => {
                 console.error('Error fetching scores:', error);
             });
+            */
     };
 
     return (
@@ -65,7 +102,7 @@ function StatisticsModal({ setShowStats }) {
                             <p className='text-gray-800'>
                                 {scoreData && scoreData.guessCount >= max_guesses ? 
                                     "Game Over" : 
-                                    `Your Score: ${calculateScore(scoreData.guessCount)}`}
+                                    `Your Score: ${calculateScore(scoreData[0])}`}
                             </p>
                             {/* Add a STAT bar based on scoreData */}
                             <button 
