@@ -1,6 +1,9 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-import NextTopLoader from 'nextjs-toploader';
+
+import dynamic from 'next/dynamic'
+const StatisticsModal = dynamic(() => import('@/components/StatisticsModal'), {ssr:false})
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,8 +23,12 @@ export default function RootLayout({ children }) {
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
             crossOrigin=""></script>
       </head>
-      <body className={inter.className}>{children}</body>
-      
+      <body className={inter.className}>
+        <div className="flex flex-col items-end p-5">
+          <StatisticsModal/>
+        </div>
+        {children}
+      </body>
     </html>
   )
 }

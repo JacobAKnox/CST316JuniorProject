@@ -1,20 +1,21 @@
-'use client'
-import dynamic from "next/dynamic"
-import StatisticsModal from '@/components/StatisticsModal'
-import Tutorial from "@/components/tutorial"
-const MapView = dynamic(() => import('@/components/map'), {ssr:false})
-const CountrySearchBox = dynamic(() => import('@/components/countryselect'), {ssr: false})
-const InfoPanel = dynamic(() => import('@/components/infopanel'), {ssr:false})
+import GameLink from './gameLink'
 
 export default function Home() {
   
   return (
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <CountrySearchBox/>
-        <MapView/>
-        <InfoPanel/>
-        <StatisticsModal/>
-        <Tutorial></Tutorial>
-      </main>
-  ) 
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div className="topBar">
+        <div className="gameIcon-row">
+          <img src="icons/game-icon-100px.png" alt="FAIL" />
+        </div>
+      </div>
+      <div className="homePageTitleContainer">
+        <p className="homePageTitle">Welcome to</p>
+        <p className="homePageTitle">Place Guesser</p>
+        <div className="playButtonContainer">
+          <GameLink></GameLink>
+        </div>
+      </div>
+    </main>
+  )
 }

@@ -25,3 +25,68 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.homePageTitleContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+}
+
+.homePageTitle {
+  text-align: center;
+  font-size: 50px;
+  color: white;
+}
+
+.playButtonContainer {
+  margin-top: 50px;
+  width: 350px;
+  height: 60px; 
+}
+
+.playButton {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: darkgreen;
+  font-size: 25px;
+  text-align: cetner;
+  border-radius: 12px;
+  width: 200px;
+  height: 50px;
+  transition-duration: 50ms;
+}
+
+.playButton:hover {
+  background-color: rgb(0, 90, 0);
+}
+
+.playButton:active {
+  opacity: 75%;
+}
+
+.topBar {
+  border-width: 5px;
+  border-color: green;
+  height: 80px;
+}
+
+.gameIcon-row {
+  border-width: 2px;
+  border-color: white;
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.gameIcon {
+  border-radius: 25px;
+}
