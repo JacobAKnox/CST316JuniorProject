@@ -1,6 +1,9 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-import StatisticsModal from '@/components/StatisticsModal'
+
+import dynamic from 'next/dynamic'
+const StatisticsModal = dynamic(() => import('@/components/StatisticsModal'), {ssr:false})
+
 
 const inter = Inter({ subsets: ['latin'] })
 

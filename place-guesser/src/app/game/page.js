@@ -1,4 +1,6 @@
-import GameLayout from "@/components/gamelayout";
+import dynamic from "next/dynamic";
+
+const GameLayout = dynamic(() => import('@/components/gamelayout'), {ssr:false})
 
 export default function Game() {
   return (

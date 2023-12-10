@@ -2,11 +2,13 @@
 import { signal_event } from '@/lib/events';
 import {addGuess} from '../components/infopanel'
 import { convert_bounds, convert_latlng } from '@/lib/geoconversions';
+import { useEffect } from 'react';
 
 export let goal = {Country: "Andorra", ForiegnPlace: "Angola", CountryId: 1}
 export let puzzle = {USPlace: "Angola", State: "New York"}
-let guess_count = 0
+export let guess_count = 0
 export const max_guesses = 5;
+export let game_won = false;
 
 prepare()
 
@@ -16,6 +18,7 @@ function prepare() {
     .then(res => {
         goal.latitude = res.location.lat
         goal.longitude = res.location.lng
+        goal.latlong = convert_latlng(res.location)
     })
     fetch(`/api/countries/bounds?name=${goal.Country}`)
     .then(res => res.json())
@@ -26,22 +29,30 @@ function prepare() {
     .then(res => res.json())
     .then(res => {
         puzzle.bounds = convert_bounds(res.bounds)
-        signal_event("init_bounds")
+        delay_init_bounds()
     })
     fetch(`/api/countries/location?name=${puzzle.USPlace + " " + puzzle.State}`)
     .then(res => res.json())
     .then(res => {
         puzzle.latlong = convert_latlng(res.location)
-        signal_event("init_pin")
+        delay_init_pin()
     })
 }
 
+function delay_init_pin() {
+    setTimeout(signal_event, 300, "init_pin")
+}
+
+function delay_init_bounds() {
+    setTimeout(signal_event, 300, "init_bounds")
+}
+
 export function make_guess(guess) {
+    guess_count++;
     if (guess.id === goal.CountryId) {
         win_game();
         return;
     }
-    guess_count++;
     addGuess(guess); // add country to the info panel
 
     if (guess_count >= max_guesses) {
@@ -58,16 +69,27 @@ export function getGuessCount() {
 
 export function win_game() {
     // say you won, then stats
+    console.log("win")
+    game_won = true;
     signal_event("game_over", goal)
-    console.log("You win")
+    delay_map_udpate(goal, puzzle)
 }
 export function lose_game() {
     // show answer then stats 
+    console.log("lose")
     signal_event("game_over", goal)
-    console.log("Game Over")
+    delay_map_udpate(goal, puzzle)
 }
 
+async function delay_map_udpate(dataa, datab) {
+    setTimeout(map_udpate, 200, dataa, datab)
+}
 
+function map_udpate(dataa, datab) {
+    console.log("UPDATE")
+    signal_event("map_update", dataa)
+    signal_event("map_updatedisable", datab)
+}
 
 export function generatePuzzle (list){
     const keys = Object.keys(list)
