@@ -119,7 +119,6 @@ async function delay_map_udpate(dataa, datab) {
 }
 
 function map_udpate(dataa, datab) {
-    console.log("UPDATE")
     signal_event("map_update", dataa)
     signal_event("map_updatedisable", datab)
 }

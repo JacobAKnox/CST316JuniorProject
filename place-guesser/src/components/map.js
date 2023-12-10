@@ -57,5 +57,12 @@ function MapController({event}) {
     subscribe("init_bounds", init_bounds)
     subscribe("map_update" + event, move_goal)
 
+    if (event == "_disable") {
+        setTimeout(() => {
+            init_bounds()
+            init_pin()
+        }, 200)
+    }
+
     return null;
 }
