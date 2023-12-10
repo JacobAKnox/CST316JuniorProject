@@ -2,22 +2,48 @@
 
 import React, { useState } from 'react';
 import { getGuessCount, max_guesses } from '@/game/game';
+import { v4 as uuidv4 } from 'uuid';
 
 function StatisticsModal({ setShowStats }) {
     const [scoreData, setScoreData] = useState(null);
     const [showScores, setShowScores] = useState(false);
 
+    // Generate a session ID using UUID v4
+    const sessionID = uuidv4();
+
     const calculateScore = (guessCount) => {
-        return Math.max(0, max_guesses - guessCount + 1);
+        return Math.min(guessCount, max_guesses);
     };
-    
+
+    // Function to post the score
+    const postScore = (guessCount) => {
+        fetch('/api/save_scores', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ sessionID, guessCount }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Score saved:', data);
+        })
+        .catch((error) => {
+            console.error('Error saving score:', error);
+        });
+    };
+
+    // Function to fetch scores
     const fetchScores = () => {
         fetch('/api/get_scores')
             .then(response => response.json())
             .then(data => {
                 const guessCount = getGuessCount();
-                setScoreData({ ...data[0], guessCount }); 
+                setScoreData({ ...data[0], guessCount });
                 setShowScores(true);
+
+                // Post the score
+                postScore(guessCount);
             })
             .catch(error => {
                 console.error('Error fetching scores:', error);
@@ -37,11 +63,11 @@ function StatisticsModal({ setShowStats }) {
                         <div className="mt-3 text-center">
                             <h3 className="text-lg leading-6 font-medium text-gray-900">Your Statistics</h3>
                             <p className='text-gray-800'>
-                                 {scoreData && scoreData.guessCount >= max_guesses ? 
-                                   "Game Over" : 
-                                   `Your Score: ${calculateScore(scoreData.guessCount)}`}
+                                {scoreData && scoreData.guessCount >= max_guesses ? 
+                                    "Game Over" : 
+                                    `Your Score: ${calculateScore(scoreData.guessCount)}`}
                             </p>
-                            {/* Here you can add a STAT bar based on scoreData */}
+                            {/* Add a STAT bar based on scoreData */}
                             <button 
                                 className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
                                 onClick={() => setShowScores(false)}>
