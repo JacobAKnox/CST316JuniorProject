@@ -1,21 +1,35 @@
 "use client"
 
-import { game_won, guess_count, puzzle } from "@/game/game"
+import { game_won, get_puzzle, guess_count } from "@/game/game"
 import { subscribe } from "@/lib/events"
-import dynamic from "next/dynamic"
-import { useState } from "react"
+//import dynamic from "next/dynamic"
+import { useEffect, useState } from "react"
 
-const MapView = dynamic(() => import('@/components/map'), {ssr:false})
-const CountrySearchBox = dynamic(() => import('@/components/countryselect'), {ssr: false})
-const InfoPanel = dynamic(() => import('@/components/infopanel'), {ssr:false})
+import MapView from "./map"
+import CountrySearchBox from "./countryselect"
+import InfoPanel from "./infopanel"
+
+// if you start getting window not found errors, use these instead
+// const MapView = dynamic(() => import('@/components/map'), {ssr:false})
+// const CountrySearchBox = dynamic(() => import('@/components/countryselect'), {ssr: false})
+// const InfoPanel = dynamic(() => import('@/components/infopanel'), {ssr:false})
 
 export default function GameLayout() {
     const [gameOver, setGameOver] = useState(false)
     const [firstGuess, setFirstGuess] = useState(true)
     const [gameWon, setGameWon] = useState(false)
 
+    const [puzzle, setPuzzle] = useState({USPlace: "", State: ""})
+
     const [rightText, setRightText] = useState(<div><b>{puzzle.USPlace},</b> {puzzle.State}</div>)
     const [guesses, setGuesses] = useState(0)
+
+    useEffect(() => {
+        get_puzzle().then((p) => {
+            setPuzzle(p)
+            setRightText(<div><b>{p.USPlace},</b> {p.State}</div>)
+        })
+    }, [])
 
     const on_guess = (guess) => {
         setFirstGuess(false)

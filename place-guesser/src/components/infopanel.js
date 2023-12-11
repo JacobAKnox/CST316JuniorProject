@@ -1,7 +1,6 @@
 'use client'
 
 import {useState} from 'react'  
-import {goal} from '../game/game.js'
 
 let observers = []
 let guesses_list = []
@@ -10,7 +9,7 @@ function registerObserver(fn) {
   observers.push(fn)
 }
 
-function calculateDirection(guess_pos) {
+function calculateDirection(guess_pos, goal) {
   const goal_pos = {
     lat: goal.latitude,
     lon: goal.longitude
@@ -84,9 +83,9 @@ function calculateDirection(guess_pos) {
   return result
 }
 
-export function addGuess(guess) {
+export function addGuess(guess, goal) {
   const new_data = {
-    direction: calculateDirection({lat: guess.latitude, lon: guess.longitude}),
+    direction: calculateDirection({lat: guess.latitude, lon: guess.longitude}, goal),
     country: guess.name
   }
   observers.forEach((func) => func(new_data))
