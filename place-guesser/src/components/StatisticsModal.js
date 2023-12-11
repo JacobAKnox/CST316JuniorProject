@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Cookies from 'js-cookie'
 import { getGuessCount, max_guesses } from '@/game/game';
-import { v4 as uuidv4 } from 'uuid';
 
 function StatisticsModal({ setShowStats }) {
     const [scoreData, setScoreData] = useState([]);
@@ -12,32 +11,10 @@ function StatisticsModal({ setShowStats }) {
     function updateStatisticsModal(data) { 
       setScoreData([...scoreData, data])
     }
-    // Generate a session ID using UUID v4
-    const sessionID = uuidv4();
 
     const calculateScore = (guessCount) => {
         return Math.min(guessCount, max_guesses);
     };
-
-  /*
-    // Function to post the score
-    const postScore = (guessCount) => {
-        fetch('/api/save_scores', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ sessionID, guessCount }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Score saved:', data);
-        })
-        .catch((error) => {
-            console.error('Error saving score:', error);
-        });
-    };
-  */
 
     // Function to fetch scores
     async function fetchScores() {
@@ -50,9 +27,7 @@ function StatisticsModal({ setShowStats }) {
             method: 'GET'
           })
         
-          if (response.ok) {
-            alert(`fetched score for user ${userid} successfully`)
-          } else {
+          if (!response.ok) {
             alert('failed to fetch scores')
           }
            
@@ -70,21 +45,6 @@ function StatisticsModal({ setShowStats }) {
       console.log('todays_score = ' + todays_score)
       updateStatisticsModal(todays_score) 
       setShowScores(true)
-
-            /*
-            .then(response => response.json())
-            .then(data => {
-                const guessCount = getGuessCount();
-                setScoreData({ ...data[0], guessCount });
-                setShowScores(true);
-
-                // Post the score
-                postScore(guessCount);
-            })
-            .catch(error => {
-                console.error('Error fetching scores:', error);
-            });
-            */
     };
 
     return (

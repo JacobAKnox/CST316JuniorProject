@@ -119,6 +119,32 @@ async function finish_game() {
   })
 }
 
+export async function isPlayedToday() {
+  let userid = Cookies.get('userid')
+  const current_date = new Date()
+  const current_year = current_date.getFullYear()
+  const current_month = current_date.getMonth()+1
+  const current_day = current_date.getDate()
+
+  if (typeof userid !== 'undefined') {
+    const response = await fetch(`/api/get_scores?userid=${userid}`, {
+      method: 'GET'
+    })
+    const response_data = await response.json()
+    let userscores_list = response_data.userscores
+
+    for (const score of userscores_list) {
+      if (score.date.year == current_year &&
+          score.date.month == current_month &&
+          score.date.day == current_day) {
+        return true
+      }
+    }
+  }
+
+  return false
+}
+
 function map_udpate(data) {
     signal_event("map_update", data)
 }
