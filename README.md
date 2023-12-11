@@ -1,6 +1,6 @@
 # CST316JuniorProject
 
-Team: Jacob Knox, Joseph Ten Eyck, Freddy Hernandez Jimenez, James Lawrance,
+Team: Jacob Knox, Joseph Ten Eyck, Freddy Hernandez Jimenez, James Lawrance, and Rayyan Ansari
 
 Needs a google api key supplied in the enviroment file for most location setup to run properly.
 Guide to set one up in the wiki.
