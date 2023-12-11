@@ -5,7 +5,6 @@ import clientPromise from '@/lib/database';
 
 export async function POST(req) {
   const body = await req.json()
-  console.log(body)
 
     try {
         const client = await clientPromise;
