@@ -1,10 +1,10 @@
 "use client"
 
-import { puzzle } from "@/game/game";
+import { get_puzzle } from "@/game/game";
 import { subscribe } from "@/lib/events";
 import { convert_bounds } from "@/lib/geoconversions";
 import { latLng, marker } from "leaflet";
-import React from "react";
+import React, { useEffect } from "react";
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 
 export default function MapView({event}) {
@@ -25,6 +25,12 @@ export default function MapView({event}) {
 function MapController({event}) {
     const map = useMap()
 
+    useEffect(() => {
+        get_puzzle().then((res) => {
+            move_goal(res)
+        })
+    }, [])
+
     const move_focus = (location) => {
         fetch(`/api/countries/bounds?name=${location.name}`)
         .then(response => response.json())
@@ -44,17 +50,7 @@ function MapController({event}) {
         marker(goal.latlong).addTo(map)
     }
 
-    const init_pin = () => {
-        marker(puzzle.latlong).addTo(map)
-    }
-
-    const init_bounds = () => {
-        map.fitBounds(puzzle.bounds)
-    }
-
     subscribe("guess_made" + event, move_focus)
-    subscribe("init_pin", init_pin)
-    subscribe("init_bounds", init_bounds)
     subscribe("map_update" + event, move_goal)
 
     return null;
