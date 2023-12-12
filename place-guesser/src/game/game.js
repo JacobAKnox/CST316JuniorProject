@@ -18,11 +18,11 @@ async function prepare() {
     await fetch(`/api/puzzles`)
     .then(res => res.json())
     .then(res => {
-        goal.Country = res.Country
-        goal.ForiegnPlace = res.ForiegnPlace
-        goal.CountryId = res.CountryId
-        puzzle.USPlace = res.puzzle.USPlace
-        puzzle.State = res.puzzle.State
+        goal.Country = res.puzzle[0].Country
+        goal.ForiegnPlace = res.puzzle[0].ForiegnPlace
+        goal.CountryId = res.puzze[0].CountryId
+        puzzle.USPlace = res.puzzle[0].USPlace
+        puzzle.State = res.puzzle[0].State
     })
     
     await fetch(`/api/countries/location?name=${goal.Country}`)
