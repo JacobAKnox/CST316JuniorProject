@@ -15,8 +15,19 @@ export default function Tutorial(){
                     Close
                 </button>
             </div>
-            <div>
-            <img src="Search Bar.JPG" class="w-1000 h-1000" />
+            <div class="text-center">
+                <p class="text-4xl font-bold">Instructions</p>
+
+                    <p class="my-4 text-lg font-serif">1. Name the Country that has the city with the same name as the city shown at the top of the page</p>
+
+                    <p class="my-4 text-lg font-serif">2. Enter the country into the search box and click on one of the options</p>
+
+                    <p class="my-4 text-lg font-serif">3. You have 5 attempts to guess the correct country and each incorrect guess will show on the map</p>
+
+                    <p class="my-4 text-lg font-serif">4. You may view your statistics on the top right of the screen</p>
+
+                    <p class="my-4 text-lg font-serif">5. Lastly, have fun!</p>
+
             </div>
             </Popup>
         </div>
