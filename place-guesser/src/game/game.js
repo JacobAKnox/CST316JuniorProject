@@ -14,6 +14,17 @@ export let game_won = false;
 let puzzle_retrived = false;
 
 async function prepare() {
+
+    await fetch(`/api/puzzles`)
+    .then(res => res.json())
+    .then(res => {
+        goal.Country = res.Country
+        goal.ForiegnPlace = res.ForiegnPlace
+        goal.CountryId = res.CountryId
+        puzzle.USPlace = res.puzzle.USPlace
+        puzzle.State = res.puzzle.State
+    })
+    
     await fetch(`/api/countries/location?name=${goal.Country}`)
     .then(res => res.json())
     .then(res => {
