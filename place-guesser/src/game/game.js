@@ -14,8 +14,7 @@ export let game_won = false;
 let puzzle_retrived = false;
 
 async function prepare() {
-    const {signal} = new AbortController()
-    await fetch(`/api/puzzles`, {signal})
+    await fetch(`/api/puzzles`)
     .then(res => res.json())
     .then(res => {
         goal.Country = res.puzzle[0].Country
