@@ -1,5 +1,7 @@
 import clientPromise from "@/lib/database";
 
+export const dynamic = 'force-dynamic' // defaults to auto
+
 export async function GET() {
     try{
         const client = await clientPromise;

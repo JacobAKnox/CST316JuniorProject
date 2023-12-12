@@ -55,7 +55,7 @@ function StatisticsModal({ setShowStats }) {
                 Show Stats
             </button>
             {showScores && (
-                <div className="fixed inset-0 bg-gray-600 bg-opacity-0 overflow-y-auto h-full w-full flex items-end justify-center">
+                <div className="fixed inset-0 bg-gray-600 bg-opacity-0 overflow-y-auto h-full w-full flex items-end justify-center z-[5000]">
                     <div className="p-5 border w-[400px] shadow-lg rounded-3xl bg-white">
                         <div className="mt-3 text-center">
                             <h3 className="text-lg leading-6 font-medium text-gray-900">Your Statistics</h3>

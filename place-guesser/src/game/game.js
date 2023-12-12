@@ -14,7 +14,6 @@ export let game_won = false;
 let puzzle_retrived = false;
 
 async function prepare() {
-
     await fetch(`/api/puzzles`)
     .then(res => res.json())
     .then(res => {
@@ -131,6 +130,7 @@ async function finish_game() {
 }
 
 export async function isPlayedToday() {
+  return false
   let userid = Cookies.get('userid')
   const current_date = new Date()
   const current_year = current_date.getFullYear()
