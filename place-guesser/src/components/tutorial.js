@@ -6,8 +6,14 @@ export default function Tutorial(){
     return(
         <div>
             <button className="bg-indigo-700 hover:bg-indigo-800 text-white p-2 rounded-3xl transition"
-            onClick={()=> setButtonPopup(true)}>CLICK ME</button>
-            <Popup trigger = {buttonPopup}>This is the popup message</Popup>
+            onClick={()=> setButtonPopup(true)}>Tutorial</button>
+            <Popup trigger = {buttonPopup}>
+            <button 
+                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
+                onClick={() => setButtonPopup(false)}>
+                Close
+            </button>
+            </Popup>
         </div>
     );
 }

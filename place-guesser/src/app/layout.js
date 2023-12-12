@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-
+import Tutorial from '@/components/tutorial'
 import dynamic from 'next/dynamic'
 const StatisticsModal = dynamic(() => import('@/components/StatisticsModal'), {ssr:false})
 
@@ -26,6 +26,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <div className="flex flex-col items-end p-5">
           <StatisticsModal/>
+          <Tutorial></Tutorial>
+
         </div>
         {children}
       </body>

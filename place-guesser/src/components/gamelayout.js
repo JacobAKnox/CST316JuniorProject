@@ -4,7 +4,7 @@ import { game_won, guess_count, puzzle } from "@/game/game"
 import { subscribe } from "@/lib/events"
 import dynamic from "next/dynamic"
 import { useState } from "react"
-
+import Tutorial from "./tutorial"
 const MapView = dynamic(() => import('@/components/map'), {ssr:false})
 const CountrySearchBox = dynamic(() => import('@/components/countryselect'), {ssr: false})
 const InfoPanel = dynamic(() => import('@/components/infopanel'), {ssr:false})
