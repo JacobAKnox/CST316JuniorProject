@@ -1,6 +1,7 @@
 'use client'
 import Popup from "./showtutorial";
 import { useState } from "react"
+
 export default function Tutorial(){
     const [buttonPopup, setButtonPopup] = useState(false);
     return(
@@ -16,7 +17,7 @@ export default function Tutorial(){
                 </button>
             </div>
             <div>
-            <img src="Search Bar.JPG" class="w-1000 h-1000" />
+            <img src="Search Bar.JPG" className="w-1000 h-1000" />
             </div>
             </Popup>
         </div>

@@ -67,7 +67,7 @@ export default function GameLayout() {
             </div>
             }
             <div className="flex flex-row w-full items-center justify-center">
-                {gameOver &&
+                {!firstGuess &&
                 <div className="m-10 w-1/2 text-center bg-slate-400 px-5 py-2 rounded-3xl">
                     <b>{puzzle.USPlace},</b> {puzzle.State}
                 </div>}
@@ -76,7 +76,7 @@ export default function GameLayout() {
                 </div>
             </div>
             <div className="flex flex-row w-full items-center justify-center">
-                {gameOver &&//stops this map from updating
+                {!firstGuess &&//stops this map from updating
                 <MapView event="_disable"/>
                 }
                 <MapView event=""/>
