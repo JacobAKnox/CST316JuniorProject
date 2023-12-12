@@ -20,7 +20,7 @@ async function prepare() {
     .then(res => {
         goal.Country = res.puzzle[0].Country
         goal.ForiegnPlace = res.puzzle[0].ForiegnPlace
-        goal.CountryId = res.puzze[0].CountryId
+        goal.CountryId = res.puzzle[0].CountryId
         puzzle.USPlace = res.puzzle[0].USPlace
         puzzle.State = res.puzzle[0].State
     })
